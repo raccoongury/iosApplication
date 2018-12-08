@@ -166,5 +166,4 @@ class MovieListController: UITableViewController {
         self.navigationController?.pushViewController(
             movieDetailViewController!, animated: true)
     }
-    
 }

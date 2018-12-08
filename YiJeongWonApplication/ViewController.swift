@@ -23,13 +23,6 @@ class ViewController: UIViewController {
         let theaterListController =
             self.storyboard?.instantiateViewController(withIdentifier: "TheaterListController") as! TheaterListController
         
-        //네비게이션 컨트롤러가 있을 때는 바로 푸시를 하면 됩니다.
-        //없을 때는 네비게이션 컨트롤러를 만들고 네비게이션 컨트롤러를 present로 출력
-        //뒤로 버튼을 새로 만들기
-        
-//        self.navigationItem.backBarButtonItem =
-//            UIBarButtonItem(title: "메인화면", style: .done, target: nil, action: nil)
-        
         //탭 바 컨트롤러 생성
         let tabbarController = UITabBarController()
         tabbarController.viewControllers = [movieListController, theaterListController]
@@ -68,7 +61,6 @@ class ViewController: UIViewController {
     
     
     ////이하 로그인 관련
-    
     @IBOutlet weak var loginbtn: UIButton!
     
     //AppDelegate 객체에 대한 참조 변수
@@ -109,25 +101,7 @@ class ViewController: UIViewController {
                             self.appDelegate.id = id as String
                             self.appDelegate.nickname =
                                 (result["nickname"] as! NSString) as String
-//                            self.appDelegate.image =
-//                                (result["image"] as! NSString) as String
                             self.title = "\(self.appDelegate.nickname!)님 로그인"
-                            
-//                            //image 에 저장된 데이터로 서버에서 이미지를 다운로드 받아 타이틀로 설정
-//                            let request = Alamofire.request("http://172.30.1.17:8080/com/images/\(self.appDelegate.image!)", method:.get, parameters:nil)
-//                            request.response{
-//                                response in
-//                                //다운로드 받은 데이터를 가지고 Image 생성
-//                                let image = UIImage(data:response.data!)
-//                                //이미지를 출력하기 위해서 ImageView 만들기
-//                                let imageView = UIImageView(frame:CGRect(x:0, y:0, width:40, height:40))
-//                                imageView.contentMode = .scaleAspectFit
-//                                imageView.image = image
-//                                //네비게이션 바에 배치
-//                                self.navigationItem.titleView = imageView
-//                            }
-                            
-                            
                             self.loginbtn.setTitle("로그아웃", for:.normal)
                         }
                     }

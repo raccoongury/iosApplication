@@ -1,10 +1,3 @@
-//
-//  ListViewController.swift
-//  YiJeongWonApplication
-//
-//  Created by JEONG-WON YI on 05/12/2018.
-//  Copyright © 2018 the. All rights reserved.
-//
 
 import UIKit
 
@@ -59,5 +52,4 @@ extension ListViewController : UITableViewDataSource{
         return cell
         
     }
-    
 }
